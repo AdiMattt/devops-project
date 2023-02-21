@@ -1,0 +1,12 @@
+FROM centos: latest
+RUN yum install httpd unzip wget vim -y
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/photoprowess.zip
+ZIP /var/www/html
+WORKDIR /var/www/html
+RUN unzip photoprowess.zip
+RUN rm -rf photoprowess.zip &&\
+    cp -rf photoprowess/* . &&\
+    rm -rf photoprowess &&\
+EXPOSE 80
+CMD ["/usr/sbin/httpd", "-D" ,"FOREGROUND"]
+    
