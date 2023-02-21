@@ -1,4 +1,4 @@
-FROM centos: latest
+FROM centos:latest
 RUN yum install httpd unzip wget vim -y
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/photoprowess.zip
 ZIP /var/www/html
